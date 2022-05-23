@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1) напишить декоратор:
+      // spy(func) який повинен повертати обертку, яка записує всі визови функції в своєму свойстві calls.
+      // Кожен визов повинен зберігатися як масив аргументів
+      // function sum(a, b) { return a + b}
+      // wrapper = spy(sum)
+      // wrapper(1, 2)
+      // wrapper(5, 7)
+      // wrapper.calls буде [[1,2], [5, 7]]
+
+      function sum(a, b) {
+        return a + b;
+      }
+
+      function spy(func) {
+        function wrapper(a, b) {
+          wrapper.calls.push([a, b]);
+          return func(a, b);
+        }
+        wrapper.calls = [];
+
+        return wrapper;
+      }
+
+      wrapper = spy(sum);
+      wrapper(1, 2);
+      wrapper(5, 7);
+      wrapper(11, 44);
+
+      console.dir(wrapper.calls);
+    </script>
+  </body>
+</html>

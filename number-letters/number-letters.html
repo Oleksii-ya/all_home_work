@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function maxNumberLetters(word) {
+        const charArr = [];
+        charArr[0] = word[0];
+        const quantityArr = [1];
+
+        for (let i = 1; i < word.length; i++) {
+          const index = charArr.indexOf(word[i]);
+
+          if (index === -1) {
+            charArr.push(word[i]);
+            quantityArr.push(1);
+          } else {
+            quantityArr[index] += 1;
+          }
+        }
+
+        const maxQuantity = Math.max(...quantityArr);
+        const maxIndex = quantityArr.indexOf(maxQuantity);
+
+        console.log(`${charArr[maxIndex]} - ${maxQuantity} times`);
+      }
+
+      maxNumberLetters("dwedwedwedddddgtgr");
+    </script>
+  </body>
+</html>

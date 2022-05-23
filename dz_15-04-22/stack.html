@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Реалізуйте структуру даних stack
+      // Зі стеку можемо або взяти останній елемент, або покласти ще 1 елемент.
+      // Інший доступ до стеку заборонений
+
+      function my_stack() {
+        const stack = [];
+
+        return function (item) {
+          if (item === undefined && stack.length === 0) {
+            alert("stack is empty");
+            return;
+          } else if (item === undefined) {
+            return stack.pop();
+          }
+          stack.push(item);
+        };
+      }
+
+      const first_stack = my_stack(),
+        second_stack = my_stack();
+
+      class Stack {
+        prop = [];
+
+        get stack() {
+          return this.prop.pop();
+        }
+
+        set stack(item) {
+          this.prop.push(item);
+        }
+      }
+
+      const steck_class = new Stack();
+
+    </script>
+  </body>
+</html>

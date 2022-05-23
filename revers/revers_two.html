@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // ============================================== №2
+
+      function reverseNumberStringWay(num) {
+        if (num < 0) {
+          num = -num;
+        }
+
+        const str = String(num);
+        let strResult = "";
+
+        for (let i = str.length - 1; i >= 0; i--) {
+          if (str[i] === "0") {
+            continue;
+          } else {
+            strResult += str[i];
+          }
+        }
+
+        const numResult = +strResult;
+        return numResult;
+      }
+
+      console.log(reverseNumberStringWay(-120045067008990));
+    </script>
+  </body>
+</html>

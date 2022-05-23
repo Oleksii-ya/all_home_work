@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sumAnyQuantityArguments(...args) {
+        let sum = args[args.length - 1];
+
+        function recursiveSum(args) {
+          args.pop();
+          if (args.length > 0) {
+            sum += args[args.length - 1];
+            recursiveSum(args);
+          }
+        }
+        recursiveSum(args);
+
+        console.log(sum);
+      }
+
+      sumAnyQuantityArguments(10, 30, 50, 900);
+    </script>
+  </body>
+</html>

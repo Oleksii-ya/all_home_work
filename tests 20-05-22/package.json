@@ -1,0 +1,14 @@
+{
+  "name": "tests-20-05-22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "testLogin.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Oleksii",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
